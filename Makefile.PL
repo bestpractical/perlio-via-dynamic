@@ -8,6 +8,7 @@ author		('Chia-liang Kao <clkao@clkao.org>');
 abstract_from	('dynamic.pm');
 license		('perl');
 version_from	('dynamic.pm');
+requires        ('Internals') if $] == 5.010000;
 
 include('ExtUtils::AutoInstall');
 auto_install();
