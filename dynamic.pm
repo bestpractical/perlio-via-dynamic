@@ -145,8 +145,8 @@ sub via {
 	return $via;
     }
     binmode ($fh, $via) or die $!;
-    if (defined ${*$fh}) {
-	if (defined @{*$fh}) {
+    if (defined *$fh{SCALAR}) {
+	if (defined *$fh{ARRAY}) {
 	    warn "handle $fh cannot hold references, namespace won't be cleaned";
 	    $self->{nogc} = 1;
 	}
